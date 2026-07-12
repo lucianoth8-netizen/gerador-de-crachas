@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+}
+
+/* Base App Styles */
+body {
+  font-family: var(--font-sans);
+  background-color: #0a0a0a;
+}
+
+/* Hide standard scrollbars for a clean workspace look */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0d0d0d;
+}
+::-webkit-scrollbar-thumb {
+  background: #262626;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3f3f46;
+}
+
+/* CSS Print Directives */
+@media print {
+  /* Force clean white print canvas */
+  html, body {
+    background: #ffffff !important;
+    color: #000000 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Hide entire default application workspace */
+  .no-print {
+    display: none !important;
+  }
+
+  /* Target the print-only block */
+  .print-only {
+    display: block !important;
+  }
+
+  /* Define exact physical dimensions of A4 page with breaks */
+  .print-page {
+    position: relative;
+    width: 210mm !important;
+    height: 297mm !important;
+    box-sizing: border-box !important;
+    margin: 0 !important;
+    padding-left: 30mm !important;
+    padding-right: 30mm !important;
+    padding-top: 15mm !important;
+    padding-bottom: 14mm !important;
+    page-break-after: always !important;
+    break-after: page !important;
+    background: #ffffff !important;
+  }
+
+  /* Grid layout for printed pages */
+  .print-grid {
+    display: grid !important;
+    grid-template-cols: 70mm 70mm !important;
+    grid-template-rows: repeat(10, 25mm) !important;
+    column-gap: 10mm !important;
+    row-gap: 2mm !important;
+    width: 150mm !important;
+    height: 268mm !important;
+  }
+
+  /* Force exact badge sizing in print */
+  .print-badge-box {
+    width: 70mm !important;
+    height: 25mm !important;
+    box-sizing: border-box !important;
+    background: #000000 !important;
+    overflow: hidden !important;
+  }
+}
