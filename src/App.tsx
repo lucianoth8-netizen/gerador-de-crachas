@@ -306,50 +306,11 @@ export default function App() {
       {/* Main Workspace Frame */}
       <main className="no-print flex-1 max-w-7xl w-full mx-auto p-4 md:p-6 flex flex-col gap-8">
         
-        {/* Intro/Hero Quick Info Banner */}
-        <div className="bg-gradient-to-r from-neutral-900 via-neutral-900 to-emerald-950/20 border border-neutral-800 rounded-2xl p-6 flex flex-col md:flex-row md:items-center justify-between gap-6">
-          <div className="flex flex-col gap-1.5 max-w-xl">
-            <div className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 text-[10px] font-bold uppercase tracking-wider w-fit">
-              <Sparkles className="w-3 h-3" /> Padrão Fiel Original
-            </div>
-            <h2 className="text-xl font-bold font-display text-white">Pronto para Imprimir</h2>
-            <p className="text-xs text-neutral-400 leading-relaxed">
-              Crie crachás corporativos pretos com a logo branca da Swift no tamanho exato para grampos de metal e presilhas. Os crachás são gerados em alta fidelidade e organizados em uma grade A4 perfeita para impressão.
-            </p>
-          </div>
-
-          <div className="flex gap-2">
-            <button
-              id="btn-quick-download"
-              type="button"
-              onClick={handleDownloadSinglePng}
-              className="px-4 py-2.5 rounded-xl bg-neutral-850 hover:bg-neutral-800 border border-neutral-800 text-xs font-semibold flex items-center gap-2 transition-all active:scale-95"
-            >
-              <Download className="w-4 h-4 text-emerald-400" />
-              Baixar PNG
-            </button>
-            <button
-              id="btn-quick-print"
-              type="button"
-              onClick={handlePrint}
-              disabled={badges.length === 0}
-              className={`px-4 py-2.5 rounded-xl text-xs font-semibold flex items-center gap-2 transition-all active:scale-95 ${
-                badges.length === 0
-                  ? 'bg-neutral-900 border border-neutral-850 text-neutral-600 cursor-not-allowed'
-                  : 'bg-emerald-500 hover:bg-emerald-400 text-black shadow-md shadow-emerald-500/10'
-              }`}
-            >
-              <Printer className="w-4 h-4" />
-              Imprimir A4 ({badges.length})
-            </button>
-          </div>
-        </div>
-
         {/* Workspace split columns */}
         <div id="badge-editor-workspace" className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           
           {/* Left Panel: Live Preview on top, edit forms below (LHS) */}
-          <div className="lg:col-span-5 flex flex-col gap-6 sticky lg:top-24">
+          <div className="lg:col-span-5 flex flex-col gap-6 sticky top-[120px] sm:top-[80px] lg:top-24 z-20">
             <div className="bg-neutral-900 border border-neutral-800 rounded-2xl p-5 flex flex-col gap-5 shadow-lg">
               <BadgePreview badge={editingBadge} />
               
@@ -366,13 +327,7 @@ export default function App() {
               </div>
             </div>
 
-            {/* Quick Helper tip */}
-            <div className="bg-neutral-900/40 border border-neutral-800/60 rounded-xl p-4 flex gap-3 text-xs text-neutral-400 leading-relaxed">
-              <span className="text-lg">💡</span>
-              <p>
-                <strong>Dica de Designer:</strong> Para nomes muito grandes, o aplicativo reduz automaticamente o tamanho do texto para garantir que ele permaneça perfeitamente alinhado e elegante!
-              </p>
-            </div>
+
           </div>
 
           {/* Right Panel: Settings and Fine Tuning Form (RHS) */}
