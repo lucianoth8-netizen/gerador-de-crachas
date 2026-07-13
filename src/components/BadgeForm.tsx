@@ -99,7 +99,7 @@ export const BadgeForm: React.FC<BadgeFormProps> = ({
       {/* Group 1: Content */}
       <div className="flex flex-col gap-4">
         <h3 className="text-sm font-bold uppercase tracking-wider text-neutral-400 flex items-center gap-2">
-          <Type className="w-4 h-4 text-emerald-500" />
+          <Type className="w-4 h-4 text-orange-500" />
           Conteúdo do Crachá
         </h3>
         
@@ -112,7 +112,7 @@ export const BadgeForm: React.FC<BadgeFormProps> = ({
             value={badge.name}
             onChange={handleTextChange}
             placeholder="Ex: Elielma"
-            className="w-full bg-neutral-950 border border-neutral-800 focus:border-emerald-500 rounded-lg px-3.5 py-2 text-sm text-white placeholder-neutral-600 outline-none transition-colors"
+            className="w-full bg-neutral-950 border border-neutral-800 focus:border-orange-500 rounded-lg px-3.5 py-2 text-sm text-white placeholder-neutral-600 outline-none transition-colors"
           />
         </div>
 
@@ -125,7 +125,7 @@ export const BadgeForm: React.FC<BadgeFormProps> = ({
             value={badge.role}
             onChange={handleTextChange}
             placeholder="Ex: Líder de vendas"
-            className="w-full bg-neutral-950 border border-neutral-800 focus:border-emerald-500 rounded-lg px-3.5 py-2 text-sm text-white placeholder-neutral-600 outline-none transition-colors"
+            className="w-full bg-neutral-950 border border-neutral-800 focus:border-orange-500 rounded-lg px-3.5 py-2 text-sm text-white placeholder-neutral-600 outline-none transition-colors"
           />
         </div>
 
@@ -134,9 +134,9 @@ export const BadgeForm: React.FC<BadgeFormProps> = ({
             id="btn-use-previous-config"
             type="button"
             onClick={onApplyPreviousSettings}
-            className="flex items-center justify-center gap-2 mt-1 w-full text-xs text-emerald-400 hover:text-emerald-300 font-medium transition-colors bg-neutral-950 hover:bg-neutral-900 border border-neutral-800 hover:border-neutral-700 px-3 py-2.5 rounded-lg active:scale-[0.98]"
+            className="flex items-center justify-center gap-2 mt-1 w-full text-xs text-orange-400 hover:text-orange-300 font-medium transition-colors bg-neutral-950 hover:bg-neutral-900 border border-neutral-800 hover:border-neutral-700 px-3 py-2.5 rounded-lg active:scale-[0.98]"
           >
-            <FolderSync className="w-4 h-4 text-emerald-500" />
+            <FolderSync className="w-4 h-4 text-orange-500" />
             Utilizar configuração do crachá anterior
           </button>
         )}
@@ -145,7 +145,7 @@ export const BadgeForm: React.FC<BadgeFormProps> = ({
       {/* Group 2: Text Fine-Tuning */}
       <div className="flex flex-col gap-4 border-t border-neutral-800 pt-5">
         <h3 className="text-sm font-bold uppercase tracking-wider text-neutral-400 flex items-center gap-2">
-          <Sliders className="w-4 h-4 text-emerald-500" />
+          <Sliders className="w-4 h-4 text-orange-500" />
           Ajustes de Texto & Fontes
         </h3>
 
@@ -153,7 +153,7 @@ export const BadgeForm: React.FC<BadgeFormProps> = ({
         <div className="flex flex-col gap-1.5">
           <div className="flex justify-between text-xs text-neutral-400">
             <label htmlFor="badge-nameFontSize">Tamanho do Nome</label>
-            <span className="font-mono text-emerald-400">{badge.nameFontSize}px</span>
+            <span className="font-mono text-orange-400">{badge.nameFontSize}px</span>
           </div>
           <input
             id="badge-nameFontSize"
@@ -162,7 +162,7 @@ export const BadgeForm: React.FC<BadgeFormProps> = ({
             max="80"
             value={badge.nameFontSize}
             onChange={(e) => handleSliderChange('nameFontSize', parseInt(e.target.value))}
-            className="w-full accent-emerald-500 h-1 bg-neutral-950 rounded-lg cursor-pointer"
+            className="w-full accent-orange-500 h-1 bg-neutral-950 rounded-lg cursor-pointer"
           />
         </div>
 
@@ -170,7 +170,7 @@ export const BadgeForm: React.FC<BadgeFormProps> = ({
         <div className="flex flex-col gap-1.5">
           <div className="flex justify-between text-xs text-neutral-400">
             <label htmlFor="badge-roleFontSize">Tamanho do Cargo</label>
-            <span className="font-mono text-emerald-400">{badge.roleFontSize}px</span>
+            <span className="font-mono text-orange-400">{badge.roleFontSize}px</span>
           </div>
           <input
             id="badge-roleFontSize"
@@ -179,7 +179,7 @@ export const BadgeForm: React.FC<BadgeFormProps> = ({
             max="50"
             value={badge.roleFontSize}
             onChange={(e) => handleSliderChange('roleFontSize', parseInt(e.target.value))}
-            className="w-full accent-emerald-500 h-1 bg-neutral-950 rounded-lg cursor-pointer"
+            className="w-full accent-orange-500 h-1 bg-neutral-950 rounded-lg cursor-pointer"
           />
         </div>
 
@@ -187,7 +187,7 @@ export const BadgeForm: React.FC<BadgeFormProps> = ({
         <div className="flex flex-col gap-1.5">
           <div className="flex justify-between text-xs text-neutral-400">
             <label htmlFor="badge-textSpacing">Espaçamento Entre Textos</label>
-            <span className="font-mono text-emerald-400">{badge.textSpacing}px</span>
+            <span className="font-mono text-orange-400">{badge.textSpacing}px</span>
           </div>
           <input
             id="badge-textSpacing"
@@ -196,7 +196,7 @@ export const BadgeForm: React.FC<BadgeFormProps> = ({
             max="40"
             value={badge.textSpacing}
             onChange={(e) => handleSliderChange('textSpacing', parseInt(e.target.value))}
-            className="w-full accent-emerald-500 h-1 bg-neutral-950 rounded-lg cursor-pointer"
+            className="w-full accent-orange-500 h-1 bg-neutral-950 rounded-lg cursor-pointer"
           />
         </div>
 
@@ -204,7 +204,7 @@ export const BadgeForm: React.FC<BadgeFormProps> = ({
         <div className="flex flex-col gap-1.5">
           <div className="flex justify-between text-xs text-neutral-400">
             <label htmlFor="badge-textYOffset">Deslocamento Vertical Global</label>
-            <span className="font-mono text-emerald-400">
+            <span className="font-mono text-orange-400">
               {badge.textYOffset > 0 ? `+${badge.textYOffset}` : badge.textYOffset}px
             </span>
           </div>
@@ -215,7 +215,7 @@ export const BadgeForm: React.FC<BadgeFormProps> = ({
             max="50"
             value={badge.textYOffset}
             onChange={(e) => handleSliderChange('textYOffset', parseInt(e.target.value))}
-            className="w-full accent-emerald-500 h-1 bg-neutral-950 rounded-lg cursor-pointer"
+            className="w-full accent-orange-500 h-1 bg-neutral-950 rounded-lg cursor-pointer"
           />
         </div>
       </div>
@@ -223,7 +223,7 @@ export const BadgeForm: React.FC<BadgeFormProps> = ({
       {/* Group 3: Logo Styling */}
       <div className="flex flex-col gap-4 border-t border-neutral-800 pt-5">
         <h3 className="text-sm font-bold uppercase tracking-wider text-neutral-400 flex items-center gap-2">
-          <ImageIcon className="w-4 h-4 text-emerald-500" />
+          <ImageIcon className="w-4 h-4 text-orange-500" />
           Ajustes da Logo
         </h3>
 
@@ -235,7 +235,7 @@ export const BadgeForm: React.FC<BadgeFormProps> = ({
             onClick={() => handleLogoTypeChange('swift')}
             className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-colors ${
               badge.logoType === 'swift'
-                ? 'bg-emerald-500 text-black'
+                ? 'bg-orange-500 text-black'
                 : 'bg-neutral-950 text-neutral-400 hover:text-white border border-neutral-800'
             }`}
           >
@@ -252,7 +252,7 @@ export const BadgeForm: React.FC<BadgeFormProps> = ({
             }}
             className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-colors ${
               badge.logoType === 'custom'
-                ? 'bg-emerald-500 text-black'
+                ? 'bg-orange-500 text-black'
                 : 'bg-neutral-950 text-neutral-400 hover:text-white border border-neutral-800'
             }`}
           >
@@ -264,7 +264,7 @@ export const BadgeForm: React.FC<BadgeFormProps> = ({
             onClick={() => handleLogoTypeChange('none')}
             className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-colors ${
               badge.logoType === 'none'
-                ? 'bg-emerald-500 text-black'
+                ? 'bg-orange-500 text-black'
                 : 'bg-neutral-950 text-neutral-400 hover:text-white border border-neutral-800'
             }`}
           >
@@ -282,7 +282,7 @@ export const BadgeForm: React.FC<BadgeFormProps> = ({
             onClick={() => fileInputRef.current?.click()}
             className={`border-2 border-dashed rounded-lg p-4 flex flex-col items-center justify-center gap-1.5 cursor-pointer text-center transition-colors ${
               isDragging
-                ? 'border-emerald-500 bg-emerald-500/10'
+                ? 'border-orange-500 bg-orange-500/10'
                 : badge.logoSrc
                 ? 'border-neutral-800 bg-neutral-950/50 hover:border-neutral-700'
                 : 'border-neutral-800 hover:border-neutral-700 bg-neutral-950/20'
@@ -325,7 +325,7 @@ export const BadgeForm: React.FC<BadgeFormProps> = ({
             <div className="flex flex-col gap-1.5">
               <div className="flex justify-between text-xs text-neutral-400">
                 <label htmlFor="badge-logoScale">Escala da Logo</label>
-                <span className="font-mono text-emerald-400">{Math.round(badge.logoScale * 100)}%</span>
+                <span className="font-mono text-orange-400">{Math.round(badge.logoScale * 100)}%</span>
               </div>
               <input
                 id="badge-logoScale"
@@ -335,7 +335,7 @@ export const BadgeForm: React.FC<BadgeFormProps> = ({
                 step="0.05"
                 value={badge.logoScale}
                 onChange={(e) => handleSliderChange('logoScale', parseFloat(e.target.value))}
-                className="w-full accent-emerald-500 h-1 bg-neutral-950 rounded-lg cursor-pointer"
+                className="w-full accent-orange-500 h-1 bg-neutral-950 rounded-lg cursor-pointer"
               />
             </div>
 
@@ -343,7 +343,7 @@ export const BadgeForm: React.FC<BadgeFormProps> = ({
             <div className="flex flex-col gap-1.5">
               <div className="flex justify-between text-xs text-neutral-400">
                 <label htmlFor="badge-logoXOffset">Posição X (Horizontal)</label>
-                <span className="font-mono text-emerald-400">
+                <span className="font-mono text-orange-400">
                   {badge.logoXOffset > 0 ? `+${badge.logoXOffset}` : badge.logoXOffset}px
                 </span>
               </div>
@@ -354,7 +354,7 @@ export const BadgeForm: React.FC<BadgeFormProps> = ({
                 max="150"
                 value={badge.logoXOffset}
                 onChange={(e) => handleSliderChange('logoXOffset', parseInt(e.target.value))}
-                className="w-full accent-emerald-500 h-1 bg-neutral-950 rounded-lg cursor-pointer"
+                className="w-full accent-orange-500 h-1 bg-neutral-950 rounded-lg cursor-pointer"
               />
             </div>
 
@@ -362,7 +362,7 @@ export const BadgeForm: React.FC<BadgeFormProps> = ({
             <div className="flex flex-col gap-1.5">
               <div className="flex justify-between text-xs text-neutral-400">
                 <label htmlFor="badge-logoYOffset">Posição Y (Vertical)</label>
-                <span className="font-mono text-emerald-400">
+                <span className="font-mono text-orange-400">
                   {badge.logoYOffset > 0 ? `+${badge.logoYOffset}` : badge.logoYOffset}px
                 </span>
               </div>
@@ -373,7 +373,7 @@ export const BadgeForm: React.FC<BadgeFormProps> = ({
                 max="100"
                 value={badge.logoYOffset}
                 onChange={(e) => handleSliderChange('logoYOffset', parseInt(e.target.value))}
-                className="w-full accent-emerald-500 h-1 bg-neutral-950 rounded-lg cursor-pointer"
+                className="w-full accent-orange-500 h-1 bg-neutral-950 rounded-lg cursor-pointer"
               />
             </div>
 
@@ -382,7 +382,7 @@ export const BadgeForm: React.FC<BadgeFormProps> = ({
               <div className="flex flex-col gap-1.5">
                 <div className="flex justify-between text-xs text-neutral-400">
                   <label htmlFor="badge-logoStrokeWidth">Espessura do Traço</label>
-                  <span className="font-mono text-emerald-400">{badge.logoStrokeWidth}px</span>
+                  <span className="font-mono text-orange-400">{badge.logoStrokeWidth}px</span>
                 </div>
                 <input
                   id="badge-logoStrokeWidth"
@@ -391,7 +391,7 @@ export const BadgeForm: React.FC<BadgeFormProps> = ({
                   max="20"
                   value={badge.logoStrokeWidth}
                   onChange={(e) => handleSliderChange('logoStrokeWidth', parseInt(e.target.value))}
-                  className="w-full accent-emerald-500 h-1 bg-neutral-950 rounded-lg cursor-pointer"
+                  className="w-full accent-orange-500 h-1 bg-neutral-950 rounded-lg cursor-pointer"
                 />
               </div>
             )}
@@ -415,7 +415,7 @@ export const BadgeForm: React.FC<BadgeFormProps> = ({
           id="btn-add-to-sheet"
           type="button"
           onClick={onAddToSheet}
-          className="flex-1 py-2.5 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-black font-bold text-sm flex items-center justify-center gap-2 transition-all shadow-md shadow-emerald-500/10 hover:shadow-emerald-500/20 active:scale-[0.98]"
+          className="flex-1 py-2.5 rounded-lg bg-orange-500 hover:bg-orange-400 text-black font-bold text-sm flex items-center justify-center gap-2 transition-all shadow-md shadow-orange-500/10 hover:shadow-orange-500/20 active:scale-[0.98]"
         >
           ADICIONAR
         </button>

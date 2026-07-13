@@ -94,7 +94,7 @@ export const A4Sheet: React.FC<A4SheetProps> = ({
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 bg-neutral-900 border border-neutral-800 rounded-xl p-5">
         <div className="flex flex-col gap-1">
           <h2 className="text-base font-bold flex items-center gap-2">
-            <LayoutGrid className="w-5 h-5 text-emerald-500" />
+            <LayoutGrid className="w-5 h-5 text-orange-500" />
             Organização da Folha A4
           </h2>
           <p className="text-xs text-neutral-400">
@@ -110,7 +110,7 @@ export const A4Sheet: React.FC<A4SheetProps> = ({
             </span>
             <div className="w-32 bg-neutral-950 h-2 rounded-full overflow-hidden border border-neutral-800">
               <div 
-                className="bg-emerald-500 h-full rounded-full transition-all duration-300" 
+                className="bg-orange-500 h-full rounded-full transition-all duration-300" 
                 style={{ width: `${(badges.length % maxBadges || (badges.length > 0 ? maxBadges : 0)) / maxBadges * 100}%` }}
               />
             </div>
@@ -169,7 +169,7 @@ export const A4Sheet: React.FC<A4SheetProps> = ({
                   <span className="text-[10px] text-neutral-500">Guias fora do crachá para auxiliar no corte preciso</span>
                 </div>
                 {settings.showCutLines ? (
-                  <Eye className="w-5 h-5 text-emerald-400" />
+                  <Eye className="w-5 h-5 text-orange-500" />
                 ) : (
                   <EyeOff className="w-5 h-5 text-neutral-600" />
                 )}
@@ -187,7 +187,7 @@ export const A4Sheet: React.FC<A4SheetProps> = ({
                   <span className="text-[10px] text-neutral-500">Delimitador cinza fino ao redor de cada crachá</span>
                 </div>
                 {settings.showBorders ? (
-                  <Eye className="w-5 h-5 text-emerald-400" />
+                  <Eye className="w-5 h-5 text-orange-500" />
                 ) : (
                   <EyeOff className="w-5 h-5 text-neutral-600" />
                 )}
@@ -201,7 +201,7 @@ export const A4Sheet: React.FC<A4SheetProps> = ({
                   id="btn-print-sheet"
                   type="button"
                   onClick={onPrint}
-                  className="py-2.5 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-black font-semibold text-xs flex items-center justify-center gap-2 transition-all active:scale-[0.98]"
+                  className="py-2.5 rounded-lg bg-orange-500 hover:bg-orange-400 text-black font-semibold text-xs flex items-center justify-center gap-2 transition-all active:scale-[0.98]"
                 >
                   <Printer className="w-3.5 h-3.5" />
                   Imprimir A4
@@ -251,7 +251,7 @@ export const A4Sheet: React.FC<A4SheetProps> = ({
                         type="button"
                         onClick={() => onEditBadge(badge)}
                         title="Carregar de volta no editor"
-                        className="p-1.5 rounded hover:bg-neutral-800 text-neutral-400 hover:text-emerald-400 transition-colors text-[10px] font-medium"
+                        className="p-1.5 rounded hover:bg-neutral-800 text-neutral-400 hover:text-orange-400 transition-colors text-[10px] font-medium"
                       >
                         Editar
                       </button>

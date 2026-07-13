@@ -333,15 +333,15 @@ export default function App() {
   }
 
   return (
-    <div className="min-h-screen bg-neutral-950 text-neutral-100 flex flex-col antialiased">
+    <div className="min-h-screen bg-gradient-to-br from-[#1b0a02] via-[#090401] to-neutral-950 text-neutral-100 flex flex-col antialiased">
       
       {/* 1. Main Dashboard UI (Hidden during Printing) */}
-      <header className="no-print border-b border-neutral-800 bg-neutral-900/60 backdrop-blur-md sticky top-0 z-40 px-4 py-4">
+      <header className="no-print border-b border-orange-950/40 bg-neutral-950/70 backdrop-blur-md sticky top-0 z-40 px-4 py-4">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-emerald-500 flex items-center justify-center shadow-lg shadow-emerald-500/20">
+            <div className="w-10 h-10 rounded-xl bg-orange-600 flex items-center justify-center shadow-lg shadow-orange-500/20">
               {/* Swift logo inline SVG as icon */}
-              <svg viewBox="0 0 100 100" className="w-6 h-6 text-black fill-none stroke-current" strokeWidth="12">
+              <svg viewBox="0 0 100 100" className="w-6 h-6 text-white fill-none stroke-current" strokeWidth="12">
                 <path d="M 50 15 L 85 15 L 85 50 A 35 35 0 1 1 50 15 Z" />
               </svg>
             </div>
@@ -374,7 +374,7 @@ export default function App() {
           
           {/* Left Panel: Live Preview on top, edit forms below (LHS) */}
           <div className="lg:col-span-5 flex flex-col gap-6 sticky top-[120px] sm:top-[80px] lg:top-24 z-20">
-            <div className="bg-neutral-900 border border-neutral-800 rounded-2xl p-5 flex flex-col gap-5 shadow-lg">
+            <div className="bg-orange-500/10 border border-orange-500/30 rounded-2xl p-5 flex flex-col gap-5 shadow-lg shadow-orange-500/5 backdrop-blur-sm">
               <BadgePreview badge={editingBadge} />
               
               <div className="flex justify-center gap-2">
@@ -384,7 +384,7 @@ export default function App() {
                   onClick={handleDownloadSinglePng}
                   className="w-full py-2.5 rounded-lg bg-neutral-950 border border-neutral-800 hover:border-neutral-700 text-xs text-neutral-200 hover:text-white font-medium flex items-center justify-center gap-2 transition-all"
                 >
-                  <Download className="w-3.5 h-3.5 text-emerald-400" />
+                  <Download className="w-3.5 h-3.5 text-orange-500" />
                   Baixar Este Crachá (PNG)
                 </button>
               </div>
@@ -425,7 +425,7 @@ export default function App() {
         <section id="how-it-works" className="border-t border-neutral-800 pt-10 pb-6">
           <div className="max-w-3xl flex flex-col gap-6">
             <h3 className="text-base font-bold font-display text-white flex items-center gap-2">
-              <HelpCircle className="w-5 h-5 text-emerald-400" />
+              <HelpCircle className="w-5 h-5 text-orange-500" />
               Como usar o Gerador de Crachás e obter melhores resultados?
             </h3>
             
