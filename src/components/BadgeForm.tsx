@@ -415,10 +415,9 @@ export const BadgeForm: React.FC<BadgeFormProps> = ({
           id="btn-add-to-sheet"
           type="button"
           onClick={onAddToSheet}
-          className="flex-1 py-2.5 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-black font-semibold text-sm flex items-center justify-center gap-2 transition-all shadow-md shadow-emerald-500/10 hover:shadow-emerald-500/20 active:scale-[0.98]"
+          className="flex-1 py-2.5 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-black font-bold text-sm flex items-center justify-center gap-2 transition-all shadow-md shadow-emerald-500/10 hover:shadow-emerald-500/20 active:scale-[0.98]"
         >
-          <Sparkles className="w-4 h-4" />
-          Adicionar à Folha A4
+          ADICIONAR
         </button>
       </div>
     </div>

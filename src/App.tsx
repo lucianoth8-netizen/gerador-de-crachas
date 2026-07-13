@@ -150,6 +150,69 @@ export default function App() {
     }
   };
 
+  // Automatically apply editingBadge's style configuration as the default for all badges on the sheet
+  useEffect(() => {
+    setBadges(prevBadges => {
+      let changed = false;
+      const updated = prevBadges.map(b => {
+        if (
+          b.nameFontSize !== editingBadge.nameFontSize ||
+          b.roleFontSize !== editingBadge.roleFontSize ||
+          b.textSpacing !== editingBadge.textSpacing ||
+          b.textYOffset !== editingBadge.textYOffset ||
+          b.nameColor !== editingBadge.nameColor ||
+          b.roleColor !== editingBadge.roleColor ||
+          b.logoType !== editingBadge.logoType ||
+          b.logoSrc !== editingBadge.logoSrc ||
+          b.logoScale !== editingBadge.logoScale ||
+          b.logoXOffset !== editingBadge.logoXOffset ||
+          b.logoYOffset !== editingBadge.logoYOffset ||
+          b.logoStrokeWidth !== editingBadge.logoStrokeWidth
+        ) {
+          changed = true;
+          return {
+            ...b,
+            nameFontSize: editingBadge.nameFontSize,
+            roleFontSize: editingBadge.roleFontSize,
+            textSpacing: editingBadge.textSpacing,
+            textYOffset: editingBadge.textYOffset,
+            nameColor: editingBadge.nameColor,
+            roleColor: editingBadge.roleColor,
+            logoType: editingBadge.logoType,
+            logoSrc: editingBadge.logoSrc,
+            logoScale: editingBadge.logoScale,
+            logoXOffset: editingBadge.logoXOffset,
+            logoYOffset: editingBadge.logoYOffset,
+            logoStrokeWidth: editingBadge.logoStrokeWidth,
+          };
+        }
+        return b;
+      });
+      if (changed) {
+        try {
+          localStorage.setItem(STORAGE_KEY_BADGES, JSON.stringify(updated));
+        } catch (e) {
+          console.error('Error saving badges to local storage', e);
+        }
+        return updated;
+      }
+      return prevBadges;
+    });
+  }, [
+    editingBadge.nameFontSize,
+    editingBadge.roleFontSize,
+    editingBadge.textSpacing,
+    editingBadge.textYOffset,
+    editingBadge.nameColor,
+    editingBadge.roleColor,
+    editingBadge.logoType,
+    editingBadge.logoSrc,
+    editingBadge.logoScale,
+    editingBadge.logoXOffset,
+    editingBadge.logoYOffset,
+    editingBadge.logoStrokeWidth,
+  ]);
+
   // Add the current badge to sheet
   const handleAddToSheet = () => {
     if (!editingBadge.name.trim() && !editingBadge.role.trim()) {
