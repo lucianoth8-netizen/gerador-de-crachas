@@ -223,6 +223,27 @@ export default function App() {
     }
   };
 
+  // Copy style settings from the previous badge on the sheet
+  const handleApplyPreviousSettings = () => {
+    if (badges.length === 0) return;
+    const lastBadge = badges[badges.length - 1];
+    setEditingBadge(prev => ({
+      ...prev,
+      nameFontSize: lastBadge.nameFontSize,
+      roleFontSize: lastBadge.roleFontSize,
+      textSpacing: lastBadge.textSpacing,
+      textYOffset: lastBadge.textYOffset,
+      nameColor: lastBadge.nameColor,
+      roleColor: lastBadge.roleColor,
+      logoType: lastBadge.logoType,
+      logoSrc: lastBadge.logoSrc,
+      logoScale: lastBadge.logoScale,
+      logoXOffset: lastBadge.logoXOffset,
+      logoYOffset: lastBadge.logoYOffset,
+      logoStrokeWidth: lastBadge.logoStrokeWidth,
+    }));
+  };
+
   // Clear entire sheet
   const handleClearSheet = () => {
     saveBadges([]);
@@ -360,6 +381,8 @@ export default function App() {
               badge={editingBadge}
               onChange={setEditingBadge}
               onAddToSheet={handleAddToSheet}
+              hasPreviousBadge={badges.length > 0}
+              onApplyPreviousSettings={handleApplyPreviousSettings}
             />
           </div>
 

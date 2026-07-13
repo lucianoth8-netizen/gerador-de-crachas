@@ -1,14 +1,22 @@
 import React, { useState, useRef } from 'react';
 import { BadgeData, DEFAULT_BADGE_VALUES, LogoType } from '../types';
-import { Upload, RotateCcw, Type, Image as ImageIcon, Sparkles, Sliders } from 'lucide-react';
+import { Upload, RotateCcw, Type, Image as ImageIcon, Sparkles, Sliders, FolderSync } from 'lucide-react';
 
 interface BadgeFormProps {
   badge: BadgeData;
   onChange: (updated: BadgeData) => void;
   onAddToSheet: () => void;
+  hasPreviousBadge?: boolean;
+  onApplyPreviousSettings?: () => void;
 }
 
-export const BadgeForm: React.FC<BadgeFormProps> = ({ badge, onChange, onAddToSheet }) => {
+export const BadgeForm: React.FC<BadgeFormProps> = ({
+  badge,
+  onChange,
+  onAddToSheet,
+  hasPreviousBadge = false,
+  onApplyPreviousSettings,
+}) => {
   const fileInputRef = useRef<HTMLInputElement | null>(null);
   const [isDragging, setIsDragging] = useState(false);
 
@@ -120,6 +128,18 @@ export const BadgeForm: React.FC<BadgeFormProps> = ({ badge, onChange, onAddToSh
             className="w-full bg-neutral-950 border border-neutral-800 focus:border-emerald-500 rounded-lg px-3.5 py-2 text-sm text-white placeholder-neutral-600 outline-none transition-colors"
           />
         </div>
+
+        {hasPreviousBadge && onApplyPreviousSettings && (
+          <button
+            id="btn-use-previous-config"
+            type="button"
+            onClick={onApplyPreviousSettings}
+            className="flex items-center justify-center gap-2 mt-1 w-full text-xs text-emerald-400 hover:text-emerald-300 font-medium transition-colors bg-neutral-950 hover:bg-neutral-900 border border-neutral-800 hover:border-neutral-700 px-3 py-2.5 rounded-lg active:scale-[0.98]"
+          >
+            <FolderSync className="w-4 h-4 text-emerald-500" />
+            Utilizar configuração do crachá anterior
+          </button>
+        )}
       </div>
 
       {/* Group 2: Text Fine-Tuning */}
